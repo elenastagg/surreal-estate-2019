@@ -1,0 +1,22 @@
+.header {
+  background-color: #2A3144;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+}
+
+.nav-item {
+  margin: 15px;
+  color: #727787;
+  cursor: pointer;
+
+  &:hover {
+    color: #75585C;
+  }
+}
+
