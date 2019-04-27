@@ -1,0 +1,6 @@
+.header-image {
+  background-size: contain;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-image: url(http://davisca.com/wp-content/themes/wp-real-estate/assets/images/header.jpg);
+}

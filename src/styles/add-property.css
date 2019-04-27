@@ -1,0 +1,22 @@
+.addproperty {
+  padding: 10px;
+}
+
+.title-box {
+  text-align: center;
+  background-color: #75585C;
+  margin: auto;
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .title-box {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-box {
+    width: 15%;
+  }
+}
