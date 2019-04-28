@@ -25,12 +25,13 @@
 }
 
 .logo {
-  width: 60px;
+  width: 85px;
+  padding: 2px;
 }
 
 .nav-item {
   margin: 15px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: #727787;
   cursor: pointer;
