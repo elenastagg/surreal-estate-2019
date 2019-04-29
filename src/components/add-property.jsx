@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../styles/page-titles.css';
 import '../styles/add-property.css';
 
+const axios = require('axios');
+
 class AddProperty extends Component {
   constructor(props) {
     super(props);
@@ -13,18 +15,25 @@ class AddProperty extends Component {
       bathrooms: '',
       price: '',
       email: '',
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
     };
   }
 
-  handleAddProperty = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  };
 
   handleFieldChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
+  };
+
+  handleAddProperty = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3000/api/v1/PropertyListing/', this.state)
+      .then(res => {
+        console.log(res);
+      });
   };
 
   render() {
