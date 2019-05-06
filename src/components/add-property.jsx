@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Alert from './alert.jsx';
 import '../styles/page-titles.css';
 import '../styles/add-property.css';
 
@@ -30,10 +31,20 @@ class AddProperty extends Component {
 
   handleAddProperty = (event) => {
     event.preventDefault();
+    this.setState({
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
+    });
     axios.post('http://localhost:3000/api/v1/PropertyListing/', this.state)
-      .then(res => {
-        console.log(res);
-      });
+      .then(() => this.setState({
+        isSuccess: true,
+        alertMessage: 'Thank you, your property has been added',
+      }))
+      .catch(() => this.setState({
+        isError: true,
+        alertMessage: 'Server error. Please try again later',
+      }));
   };
 
   render() {
@@ -41,7 +52,8 @@ class AddProperty extends Component {
       <div className="page add-property">
         <div className="title">List a Property</div>
         <form onSubmit={this.handleAddProperty}>
-
+          {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
+          {this.state.isError && <Alert message={this.state.alertMessage} />}
           <input name="title" className="input-box" placeholder="Listing Title" value={this.state.title} onChange={this.handleFieldChange} />
 
           <select name="type" className="select-box" value={this.state.type} onChange={this.handleFieldChange}>

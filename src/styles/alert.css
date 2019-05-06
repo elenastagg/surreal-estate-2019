@@ -1,0 +1,11 @@
+.Alert {
+  color: #75585C;
+  background-color: #A6ABBD;
+  width: 50%;
+  margin: auto;
+  font-size: 18px;
+}
+
+.Alert.success {
+  color: #2A3144;
+}
