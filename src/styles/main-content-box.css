@@ -1,0 +1,22 @@
+.main-content-box {
+  box-shadow: 0px 0px 50px 5px grey;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.submit-button {
+  border-radius: 0.1px;
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+  background-color: #2A3144;
+  font-family: 'PT Sans', sans-serif;
+  color: #dfe8e3;
+  font-size: 20px;
+  display: block;
+}

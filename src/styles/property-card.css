@@ -1,0 +1,35 @@
+.property-box {
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  width: 45%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.property-elements-box {
+  width: 45%;
+}
+.property-card-element {
+  padding: 2px;
+  text-align: left;
+}
+
+.property-card-title {
+font-weight: bold;
+color: #442A2E;
+text-transform: capitalize;
+font-size: 18px;
+}
+
+.view-button {
+  border-radius: 0.3px;
+  padding: 5px;
+  text-align: center;
+  background-color: #2A3144;
+  font-family: 'PT Sans', sans-serif;
+  color: #dfe8e3;
+  font-size: 13px;
+  width: 100%;
+}

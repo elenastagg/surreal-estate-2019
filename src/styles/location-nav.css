@@ -1,0 +1,18 @@
+.location-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tab {
+  padding: 5px;
+  text-align: center;
+  background-color: #75585C;
+  color: #dfe8e3;
+  font-size: 13px;
+  justify-content: space-between;
+  border: 1px #727787;
+  margin: 1px;
+  width: 15%;
+  text-decoration: none;
+}

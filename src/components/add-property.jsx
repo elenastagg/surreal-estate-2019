@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Alert from './alert.jsx';
+import Alert from './alert';
 import '../styles/page-titles.css';
 import '../styles/add-property.css';
-
-const axios = require('axios');
+import '../styles/main-content-box.css';
+import validator from 'email-validator';
+import axios from 'axios';
 
 class AddProperty extends Component {
   constructor(props) {
@@ -22,6 +23,18 @@ class AddProperty extends Component {
     };
   }
 
+  isSubmitDisabled() {
+    return (
+      this.state.title === '' ||
+      this.state.type === 'Property Type' ||
+      this.state.city === 'City' ||
+      this.state.bedrooms === '' ||
+      this.state.bathrooms === '' ||
+      this.state.price === '' ||
+      this.state.email === '' ||
+      !validator.validate(this.state.email)
+    );
+  }
 
   handleFieldChange = (event) => {
     this.setState({
@@ -49,7 +62,7 @@ class AddProperty extends Component {
 
   render() {
     return (
-      <div className="page add-property">
+      <div className="page main-content-box">
         <div className="title">List a Property</div>
         <form onSubmit={this.handleAddProperty}>
           {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
@@ -80,7 +93,7 @@ class AddProperty extends Component {
           <input name="price" className="input-box" type="number" placeholder="Price" value={this.state.price} onChange={this.handleFieldChange} />
           <input name="email" className="input-box" placeholder="Email" value={this.state.email} onChange={this.handleFieldChange} />
 
-          <button className="submit-button" type="submit">Add Property</button>
+          <button disabled={this.isSubmitDisabled()} className="submit-button" type="submit">Add Property</button>
         </form>
       </div>
     );
